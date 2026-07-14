@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vercel/
+
+*.log
+dev-server.err
+dev-server.log
+
+.env
+.env.*
+!.env.example
+
+Thumbs.db
+.DS_Store
