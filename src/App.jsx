@@ -8,7 +8,6 @@ import ProjectsPage from '@/pages/ProjectsPage';
 import ContactPage from '@/pages/ContactPage';
 import ServiceDetailPage from '@/pages/ServiceDetailPage';
 import { Toaster } from '@/components/ui/toaster';
-import { ThemeProvider } from '@/context/ThemeContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,27 +23,30 @@ function ScrollToTop() {
 }
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }, []);
+
   return (
-    <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <div className="min-h-screen flex flex-col transition-colors duration-300 dark:bg-gray-900">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/services" element={<ProjectsPage />} />
-              <Route path="/hizmetler/:slug" element={<ServiceDetailPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
-          <Footer />
-          <Toaster />
-        </div>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col bg-gray-900 transition-colors duration-300">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/services" element={<ProjectsPage />} />
+            <Route path="/hizmetler/:slug" element={<ServiceDetailPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <Toaster />
+      </div>
+    </Router>
   );
 }
 

@@ -114,7 +114,7 @@ const Footer = () => {
             <Code2 size={16} className="text-blue-300" />
             <span>Software:</span>
             <a
-              href="https://wa.me/905050810238?text=Merhaba,%20web%20sitesi%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum."
+              href="https://barbarossoft.com.tr/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-orange-400 transition hover:text-white"
