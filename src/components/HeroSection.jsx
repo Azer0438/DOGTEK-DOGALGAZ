@@ -50,8 +50,8 @@ const HeroSection = () => {
             transition={{ duration: 0.65, delay: 0.12 }}
             className="mt-6 max-w-2xl text-lg leading-8 text-blue-50/90 sm:text-xl"
           >
-            {siteConfig.name}, reklamdan gelen kullanıcıyı hızlı karar vereceği net hizmet sayfalarına ve doğrudan
-            iletişim aksiyonlarına yönlendiren kurumsal hizmet yapısıyla çalışır.
+            {siteConfig.name}, keşiften proje onayına, tesisat uygulamasından kaçak kontrolüne kadar süreci
+            güvenli ve anlaşılır şekilde yönetir.
           </motion.p>
 
           <motion.div
@@ -60,7 +60,7 @@ const HeroSection = () => {
             transition={{ duration: 0.65, delay: 0.18 }}
             className="mt-7 grid gap-3 text-sm font-medium text-blue-50/90 sm:grid-cols-3"
           >
-            {['Aksagaz proje takibi', 'Telefon/WhatsApp dönüşümü', 'Hizmet bazlı landing sayfaları'].map((item) => (
+            {['Aksagaz proje takibi', 'Yetkili uygulama', 'Hızlı keşif ve destek'].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle2 size={18} className="shrink-0 text-orange-400" />
                 <span>{item}</span>
@@ -103,7 +103,7 @@ const HeroSection = () => {
               <div className="grid gap-4 sm:grid-cols-[1fr_150px]">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-500">Ana hizmetler</p>
-                  <h2 className="mt-2 text-2xl font-bold leading-tight">Reklamdan gelen kullanıcı için hızlı seçim.</h2>
+                  <h2 className="mt-2 text-2xl font-bold leading-tight">İhtiyacınız olan hizmete hızlı ulaşın.</h2>
                 </div>
                 <img
                   src={siteConfig.aksaLogoUrl}

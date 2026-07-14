@@ -8,7 +8,6 @@ import {
   Fan,
   FileCheck2,
   Flame,
-  Gauge,
   MessageCircle,
   ShieldAlert,
   Sparkles,
@@ -51,12 +50,12 @@ const Projects = () => {
           <div>
             <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Hizmetler</span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
-              Google Ads trafiği için güçlü hizmet sayfaları.
+              Doğalgaz ve ısıtma hizmetlerinde güvenilir çözüm.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
-            Reklamdan gelen kullanıcıyı genel bir anasayfaya değil, aradığı hizmete özel hazırlanmış sayfalara
-            yönlendireceğiz. Böylece mesaj, teklif ve dönüşüm aksiyonu daha net olur.
+            Kayseri’de tesisat, proje çizimi, kaçak kontrolü ve ısıtma sistemi ihtiyaçlarınız için her hizmeti
+            ayrı ayrı planlıyor, süreci anlaşılır şekilde yönetiyoruz.
           </p>
         </div>
 
@@ -86,8 +85,8 @@ const Projects = () => {
                   {service.description}
                 </p>
                 <div className="mt-5 border-t border-slate-100 pt-5 dark:border-white/10">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-500">Reklam hedefi</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.adIntent}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-500">Hizmet kapsamı</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.benefits[0]}</p>
                 </div>
                 <Link
                   to={service.path}
@@ -104,14 +103,14 @@ const Projects = () => {
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="border border-slate-200 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-slate-900 md:p-10">
             <div className="flex h-12 w-12 items-center justify-center rounded-md bg-orange-500 text-white">
-              <Gauge size={24} />
+              <ClipboardCheck size={24} />
             </div>
             <h3 className="mt-5 text-2xl font-bold text-slate-950 dark:text-white">
-              Reklam kampanyası için önerilen ana sayfalar
+              İhtiyacınıza göre hizmet seçin
             </h3>
             <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
-              İlk reklam kurgusunda en yüksek niyetli hizmetleri ayrı reklam gruplarına ayırmak daha sağlıklı olur:
-              tesisat, proje çizimi, kaçak kontrolü, petek temizliği ve merkezi sistem işleri.
+              Doğalgazla ilgili her iş aynı kapsamda değildir. Tesisat, proje çizimi, kaçak kontrolü, petek
+              temizliği ve merkezi sistem taleplerinizi ayrı ayrı değerlendiriyoruz.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {services.slice(0, 8).map((service) => (

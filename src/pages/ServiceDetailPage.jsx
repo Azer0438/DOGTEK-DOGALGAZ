@@ -121,17 +121,18 @@ const ServiceDetailPage = () => {
             </div>
 
             <aside className="border border-white/15 bg-white/10 p-6 backdrop-blur">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">Reklam sayfası amacı</p>
-              <p className="mt-3 leading-7 text-blue-50/90">{service.adIntent}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">Hizmet özeti</p>
+              <p className="mt-3 leading-7 text-blue-50/90">{service.description}</p>
               <div className="mt-6 border-t border-white/10 pt-6">
-                <p className="text-sm font-bold text-white">Anahtar arama niyetleri</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {service.keywords.map((keyword) => (
-                    <span key={keyword} className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-blue-50">
-                      {keyword}
-                    </span>
+                <p className="text-sm font-bold text-white">Bu hizmette öne çıkanlar</p>
+                <ul className="mt-4 space-y-3">
+                  {service.benefits.slice(0, 3).map((benefit) => (
+                    <li key={benefit} className="flex gap-2 text-sm leading-6 text-blue-50">
+                      <CheckCircle2 size={17} className="mt-1 shrink-0 text-orange-300" />
+                      <span>{benefit}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </aside>
           </div>
@@ -142,11 +143,11 @@ const ServiceDetailPage = () => {
             <div>
               <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Neden önemli?</span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
-                {service.shortTitle} hizmetinde doğru planlama dönüşümü artırır.
+                {service.shortTitle} hizmetinde doğru planlama güvenli sonuç sağlar.
               </h2>
               <p className="mt-5 leading-8 text-slate-600 dark:text-slate-300">
-                Google Ads tarafında kullanıcı aradığı hizmete özel bir sayfaya geldiğinde fiyat, güven, süreç ve iletişim
-                bilgilerini hızlıca görmek ister. Bu sayfa o niyet için hazırlandı.
+                Doğalgaz ve ısıtma işlerinde sağlıklı sonuç için mevcut tesisat, cihaz konumu, yapı tipi ve kullanım
+                ihtiyacı birlikte değerlendirilmelidir. Keşif sonrası size en uygun çözüm ve uygulama planı netleşir.
               </p>
             </div>
 
@@ -166,7 +167,7 @@ const ServiceDetailPage = () => {
             <div className="max-w-3xl">
               <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Süreç</span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
-                İş adımları net olursa müşteri kararı kolaylaşır.
+                Başından sonuna kontrollü hizmet süreci.
               </h2>
             </div>
             <div className="mt-10 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 dark:border-white/10 dark:bg-white/10 md:grid-cols-4">
@@ -206,11 +207,11 @@ const ServiceDetailPage = () => {
             </div>
 
             <aside className="h-fit bg-blue-950 p-7 text-white md:p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-300">Hızlı dönüşüm</p>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-300">Hızlı iletişim</p>
               <h3 className="mt-4 text-2xl font-bold">{service.shortTitle} için aynı gün ön görüşme alın.</h3>
               <p className="mt-4 leading-7 text-blue-100">
-                Reklamdan gelen kullanıcılar için en güçlü aksiyon telefon veya WhatsApp’tır. Bu butonlar GA4/Ads event
-                ölçümüne hazır şekilde işaretlendi.
+                Keşif, fiyat bilgisi, uygun tarih ve hizmet kapsamı için ekibimizle telefon veya WhatsApp üzerinden
+                hızlıca görüşebilirsiniz.
               </p>
               <div className="mt-6 grid gap-3">
                 <button

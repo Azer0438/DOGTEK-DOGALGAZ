@@ -50,7 +50,6 @@ export const services = [
     heroTitle: 'Kayseri doğalgaz tesisatı için güvenli ve planlı uygulama.',
     lead:
       'Yeni abonelik, tesisat yenileme veya daire içi hat ihtiyaçlarında süreci keşiften onaya kadar tek ekip sorumluluğunda yönetiyoruz.',
-    adIntent: 'Doğalgaz tesisatı yaptırmak isteyen kullanıcılar için ana teklif sayfası.',
     keywords: ['kayseri doğalgaz tesisatı', 'doğalgaz tesisatı kayseri', 'doğalgaz montaj kayseri'],
     benefits: [
       'Yerinde keşif ve ihtiyaca uygun hat planlaması',
@@ -90,7 +89,6 @@ export const services = [
     heroTitle: 'Aksagaz proje çizimi ve onay takibini sizin adınıza yönetiyoruz.',
     lead:
       'Doğalgaz projesinde teknik şartnameye uygun çizim, resmi başvuru ve revizyon takibi zaman kaybını azaltır.',
-    adIntent: 'Proje çizimi veya onay süreci arayan kullanıcılara doğrudan çözüm sayfası.',
     keywords: ['aksagaz proje çizimi', 'kayseri doğalgaz proje', 'doğalgaz proje onayı kayseri'],
     benefits: [
       'Yetkili firma yaklaşımıyla teknik şartname uyumu',
@@ -130,7 +128,6 @@ export const services = [
     heroTitle: 'Gaz kokusu veya kaçak şüphesinde hızlı ve güvenli müdahale.',
     lead:
       'Doğalgaz kaçağı ihmal edilmemesi gereken ciddi bir risktir. Şüpheli durumda ortamı havalandırın, cihazları kapatın ve uzman destek alın.',
-    adIntent: 'Acil niyetli aramalar için telefon ve WhatsApp dönüşüm odaklı sayfa.',
     keywords: ['kayseri doğalgaz kaçak kontrolü', 'doğalgaz kaçağı kayseri', 'gaz kaçağı tespiti'],
     benefits: [
       'Kaçak şüphesinde hızlı ön görüşme ve yönlendirme',
@@ -170,7 +167,6 @@ export const services = [
     heroTitle: 'Petekleriniz az ısınıyorsa tesisat temizliği verimi artırabilir.',
     lead:
       'Zamanla tesisatta oluşan tortu ve kirlenme, ısı dağılımını düşürebilir. Profesyonel temizlik konforu ve verimi destekler.',
-    adIntent: 'Kış dönemi yüksek dönüşüm potansiyelli bakım ve temizlik sayfası.',
     keywords: ['kayseri petek temizliği', 'petek temizleme kayseri', 'tesisat temizliği kayseri'],
     benefits: [
       'Peteklerde daha dengeli ısı dağılımına yardımcı olur',
@@ -210,7 +206,6 @@ export const services = [
     heroTitle: 'Merkezi ısıtma için verimli ve yedekli kaskat kazan çözümleri.',
     lead:
       'Kaskat kazan sistemleri, değişken ısı ihtiyacına göre çalışan modüler yapısıyla apartman ve ticari binalar için güçlü bir seçenektir.',
-    adIntent: 'Apartman/site yöneticileri ve ticari yapı sahipleri için yüksek değerli teklif sayfası.',
     keywords: ['kayseri kaskat kazan', 'kaskat kazan sistemi', 'merkezi ısıtma kayseri'],
     benefits: [
       'İhtiyaca göre kapasite hesabı ve cihaz seçimi',
@@ -250,7 +245,6 @@ export const services = [
     heroTitle: 'Kat kaloriferi kurulumunda doğru kapasite ve temiz uygulama.',
     lead:
       'Isıtma sisteminde cihaz seçimi kadar tesisat planı, kapasite hesabı ve uygulama kalitesi de uzun vadeli konforu belirler.',
-    adIntent: 'Kurulum ihtiyacı olan konut ve küçük ticari işletmeler için teklif sayfası.',
     keywords: ['kayseri kat kaloriferi', 'kat kaloriferi kurulumu kayseri', 'kalorifer tesisatı kayseri'],
     benefits: [
       'Mekana uygun kapasite ve cihaz önerisi',
@@ -290,7 +284,6 @@ export const services = [
     heroTitle: 'Yerden ısıtma ile homojen, konforlu ve modern ısınma.',
     lead:
       'Yeni yapı ve tadilat projelerinde doğru planlanan yerden ısıtma sistemi, yaşam alanlarında dengeli sıcaklık ve estetik avantaj sağlar.',
-    adIntent: 'Yeni yapı, tadilat ve konfor odaklı ısıtma aramaları için landing sayfası.',
     keywords: ['kayseri yerden ısıtma', 'yerden ısıtma sistemi kayseri', 'zeminden ısıtma kayseri'],
     benefits: [
       'Mekan içinde daha dengeli ısı dağılımı',
@@ -330,7 +323,6 @@ export const services = [
     heroTitle: 'Isı pompası ile dört mevsim verimli iklimlendirme çözümü.',
     lead:
       'Isı pompası sistemleri doğru seçildiğinde ısıtma, soğutma ve kullanım konforunu tek sistem üzerinden destekleyebilir.',
-    adIntent: 'Enerji verimli sistem arayan daha bilinçli kullanıcılar için bilgi ve teklif sayfası.',
     keywords: ['kayseri ısı pompası', 'ısı pompası kurulumu kayseri', 'ısı pompası sistemleri'],
     benefits: [
       'Mekana ve kullanım ihtiyacına göre cihaz seçimi',
