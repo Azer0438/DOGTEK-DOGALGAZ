@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Code2, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import Logo from './Logo';
 import { getWhatsappUrl, services, siteConfig } from '@/lib/siteData';
+import { trackLeadClick } from '@/lib/tracking';
 
 const Footer = () => {
   const quickLinks = [
@@ -30,6 +31,7 @@ const Footer = () => {
           href={getWhatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackLeadClick('whatsapp', 'floating_footer')}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-lg transition hover:bg-green-700 md:h-14 md:w-14"
           aria-label="WhatsApp"
           title="WhatsApp"
@@ -38,6 +40,7 @@ const Footer = () => {
         </a>
         <a
           href={`tel:+${siteConfig.phoneRaw}`}
+          onClick={() => trackLeadClick('phone', 'floating_footer')}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-white shadow-lg transition hover:bg-orange-600 md:h-14 md:w-14"
           aria-label="Hemen ara"
           title="Hemen ara"
@@ -73,8 +76,10 @@ const Footer = () => {
             <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-orange-400">Hizmetler</h3>
             <ul className="mt-5 space-y-3">
               {services.slice(0, 6).map((service) => (
-                <li key={service.title} className="text-sm text-slate-300">
-                  {service.title}
+                <li key={service.slug}>
+                  <Link to={service.path} className="text-sm text-slate-300 transition hover:text-white">
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,7 +92,11 @@ const Footer = () => {
                 <MapPin size={18} className="mt-0.5 shrink-0 text-orange-400" />
                 <span>{siteConfig.address}</span>
               </a>
-              <a href={`tel:+${siteConfig.phoneRaw}`} className="flex items-center gap-3 transition hover:text-white">
+              <a
+                href={`tel:+${siteConfig.phoneRaw}`}
+                onClick={() => trackLeadClick('phone', 'footer_contact')}
+                className="flex items-center gap-3 transition hover:text-white"
+              >
                 <Phone size={18} className="shrink-0 text-orange-400" />
                 <span>{siteConfig.phoneDisplay}</span>
               </a>

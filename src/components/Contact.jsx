@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Clock, ExternalLink, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { getWhatsappUrl, partners, siteConfig } from '@/lib/siteData';
+import { trackLeadClick } from '@/lib/tracking';
 
 const Contact = () => {
   const { hash } = useLocation();
@@ -99,6 +100,7 @@ const Contact = () => {
                   href={getWhatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackLeadClick('whatsapp', 'contact_section')}
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-green-600 px-5 py-3 font-bold text-white transition hover:bg-green-700"
                 >
                   <MessageCircle size={19} />
@@ -106,6 +108,7 @@ const Contact = () => {
                 </a>
                 <a
                   href={`tel:+${siteConfig.phoneRaw}`}
+                  onClick={() => trackLeadClick('phone', 'contact_section')}
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-blue-900 px-5 py-3 font-bold text-white transition hover:bg-blue-800"
                 >
                   <Phone size={19} />

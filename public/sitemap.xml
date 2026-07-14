@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://dogtekdogalgazmuhendislik.com/about</loc>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dogtekdogalgazmuhendislik.com/projects</loc>
@@ -14,6 +14,38 @@
   </url>
   <url>
     <loc>https://dogtekdogalgazmuhendislik.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-tesisati</loc>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/aksagaz-proje-cizimi</loc>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-kacak-kontrolu</loc>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/petek-temizligi</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/kaskat-kazan-sistemleri</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/kat-kaloriferi-kurulumu</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/yerden-isitma-sistemleri</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/isi-pompasi-sistemleri</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

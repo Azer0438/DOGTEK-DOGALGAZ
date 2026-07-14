@@ -112,12 +112,37 @@ function extractHelmetData(content, filePath, routes) {
   const url = routes.size && routes.has(fileName) 
     ? routes.get(fileName) 
     : generateFallbackUrl(fileName);
+
+  if (url.includes(':')) {
+    return null;
+  }
   
   return {
     url,
     title: title || 'Untitled Page',
     description: description || 'No description available'
   };
+}
+
+async function loadServicePages() {
+  const siteDataPath = path.join(process.cwd(), 'src', 'lib', 'siteData.js');
+
+  if (!fs.existsSync(siteDataPath)) {
+    return [];
+  }
+
+  try {
+    const { services } = await import(pathToFileURL(siteDataPath).href);
+
+    return services.map(service => ({
+      url: service.path,
+      title: service.seoTitle,
+      description: service.metaDescription,
+    }));
+  } catch (error) {
+    console.error(`❌ Error loading service data:`, error.message);
+    return [];
+  }
 }
 
 function generateFallbackUrl(fileName) {
@@ -150,7 +175,7 @@ function processPageFile(filePath, routes) {
   }
 }
 
-function main() {
+async function main() {
   const pagesDir = path.join(process.cwd(), 'src', 'pages');
   const appJsxPath = path.join(process.cwd(), 'src', 'App.jsx');
 
@@ -173,6 +198,7 @@ function main() {
     process.exit(1);
   }
 
+  pages.push(...await loadServicePages());
 
   const llmsTxtContent = generateLlmsTxt(pages);
   const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
