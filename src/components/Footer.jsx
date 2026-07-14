@@ -10,6 +10,7 @@ const Footer = () => {
     { name: 'Anasayfa', path: '/' },
     { name: 'Hakkımızda', path: '/about' },
     { name: 'Hizmetler', path: '/projects' },
+    { name: 'Kayseri Hizmet Bölgeleri', path: '/kayseri-dogalgaz-hizmetleri' },
     { name: 'Bayilikler', path: '/contact#dealers' },
     { name: 'İletişim', path: '/contact' },
   ];

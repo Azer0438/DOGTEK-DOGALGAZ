@@ -13,10 +13,27 @@ export function trackEvent(eventName, params = {}) {
 }
 
 export function trackLeadClick(type, label, extra = {}) {
-  trackEvent('lead_click', {
+  const payload = {
     lead_type: type,
     event_category: 'lead',
     event_label: label,
     ...extra,
+  };
+
+  trackEvent('lead_click', {
+    ...payload,
   });
+
+  const adsId = import.meta.env.VITE_GOOGLE_ADS_ID;
+  const conversionLabel =
+    type === 'phone'
+      ? import.meta.env.VITE_GOOGLE_ADS_PHONE_CONVERSION_LABEL
+      : import.meta.env.VITE_GOOGLE_ADS_WHATSAPP_CONVERSION_LABEL;
+
+  if (adsId && conversionLabel && typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: `${adsId}/${conversionLabel}`,
+      ...payload,
+    });
+  }
 }

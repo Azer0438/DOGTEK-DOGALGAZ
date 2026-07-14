@@ -7,7 +7,9 @@ import AboutPage from '@/pages/AboutPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ContactPage from '@/pages/ContactPage';
 import ServiceDetailPage from '@/pages/ServiceDetailPage';
+import LocalSeoPage from '@/pages/LocalSeoPage';
 import { Toaster } from '@/components/ui/toaster';
+import GoogleTag from '@/components/GoogleTag';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <Router>
+      <GoogleTag />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-gray-900 transition-colors duration-300">
         <Navbar />
@@ -40,6 +43,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/services" element={<ProjectsPage />} />
             <Route path="/hizmetler/:slug" element={<ServiceDetailPage />} />
+            <Route path="/kayseri-dogalgaz-hizmetleri" element={<LocalSeoPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

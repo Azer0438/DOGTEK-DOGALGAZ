@@ -7,11 +7,12 @@ import {
   CheckCircle2,
   ClipboardCheck,
   HelpCircle,
+  MapPin,
   MessageCircle,
   PhoneCall,
   ShieldCheck,
 } from 'lucide-react';
-import { getRelatedServices, getServiceBySlug, getWhatsappUrl, siteConfig } from '@/lib/siteData';
+import { getRelatedServices, getServiceBySlug, getWhatsappUrl, serviceAreas, siteConfig } from '@/lib/siteData';
 import { trackLeadClick } from '@/lib/tracking';
 
 const ServiceDetailPage = () => {
@@ -68,6 +69,31 @@ const ServiceDetailPage = () => {
     })),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Anasayfa',
+        item: siteConfig.domain,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Hizmetler',
+        item: `${siteConfig.domain}/projects`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: service.shortTitle,
+        item: canonical,
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -81,6 +107,7 @@ const ServiceDetailPage = () => {
         <meta property="og:url" content={canonical} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <article className="bg-white pt-20 dark:bg-slate-950">
@@ -156,6 +183,44 @@ const ServiceDetailPage = () => {
                 <div key={benefit} className="border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-slate-900">
                   <CheckCircle2 className="mb-4 text-orange-500" size={24} />
                   <p className="font-semibold leading-7 text-slate-700 dark:text-slate-200">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-slate-200 bg-slate-50 py-16 dark:border-white/10 dark:bg-slate-900 md:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+            <div>
+              <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Kayseri Hizmet Bölgeleri</span>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+                {service.shortTitle} için Kayseri genelinde keşif ve uygulama desteği.
+              </h2>
+              <div className="mt-5 space-y-4 leading-8 text-slate-600 dark:text-slate-300">
+                <p>
+                  {siteConfig.shortName}, {service.shortTitle.toLowerCase()} taleplerinde yalnızca fiyat vermekle
+                  kalmaz; tesisatın mevcut durumunu, cihaz konumunu, güvenlik koşullarını ve resmi süreçleri birlikte
+                  değerlendirir.
+                </p>
+                <p>
+                  Melikgazi, Kocasinan ve Talas başta olmak üzere Kayseri genelinde konut, apartman, iş yeri ve ticari
+                  alanlara yönelik doğalgaz ve ısıtma çözümleri sunuyoruz.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {serviceAreas.map((area) => (
+                <div key={area} className="border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="mt-1 shrink-0 text-orange-500" size={21} />
+                    <div>
+                      <h3 className="font-bold text-slate-950 dark:text-white">{area} {service.shortTitle}</h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                        Keşif, uygunluk değerlendirmesi ve hizmet kapsamı için ekibimizle iletişime geçebilirsiniz.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

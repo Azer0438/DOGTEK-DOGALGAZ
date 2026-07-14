@@ -151,12 +151,24 @@ function generateFallbackUrl(fileName) {
 }
 
 function generateLlmsTxt(pages) {
-  const sortedPages = pages.sort((a, b) => a.title.localeCompare(b.title));
+  const uniquePages = [...new Map(pages.map(page => [page.url, page])).values()];
+  const sortedPages = uniquePages.sort((a, b) => a.title.localeCompare(b.title));
   const pageEntries = sortedPages.map(page => 
     `- [${page.title}](${page.url}): ${page.description}`
   ).join('\n');
   
   return `## Pages\n${pageEntries}`;
+}
+
+function getManualPages() {
+  return [
+    {
+      url: '/kayseri-dogalgaz-hizmetleri',
+      title: 'Kayseri Doğalgaz Hizmetleri | Doğtek Doğalgaz Mühendislik',
+      description:
+        'Kayseri Melikgazi, Kocasinan, Talas ve çevresinde doğalgaz tesisatı, Aksagaz proje çizimi, kaçak kontrolü ve ısıtma sistemi hizmetleri.',
+    },
+  ];
 }
 
 function ensureDirectoryExists(dirPath) {
@@ -199,6 +211,7 @@ async function main() {
   }
 
   pages.push(...await loadServicePages());
+  pages.push(...getManualPages());
 
   const llmsTxtContent = generateLlmsTxt(pages);
   const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
