@@ -1,55 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogtek-dogalgaz-servis-araci-kayseri.jpg</image:loc>
+      <image:title>Kayseri Doğtek Doğalgaz servis aracı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kaskat-kazan-sistemi-kayseri.jpg</image:loc>
+      <image:title>Kayseri kaskat kazan sistemi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/yerden-isitma-sistemi-kayseri.jpg</image:loc>
+      <image:title>Kayseri yerden ısıtma sistemi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/about</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/about</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/projects</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/projects</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/contact</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/contact</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/kayseri-dogalgaz-hizmetleri</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/kayseri-dogalgaz-hizmetleri</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-tesisati</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-tesisati</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogtek-dogalgaz-servis-araci-kayseri.jpg</image:loc>
+      <image:title>Kayseri doğalgaz tesisatı saha ekibi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kat-kaloriferi-tesisati-kayseri.jpg</image:loc>
+      <image:title>Kayseri kat kaloriferi tesisatı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogalgaz-dis-tesisat-kayseri.jpg</image:loc>
+      <image:title>Kayseri dış cephe doğalgaz tesisatı</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/aksagaz-proje-cizimi</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/aksagaz-proje-cizimi</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogtek-dogalgaz-servis-araci-kayseri.jpg</image:loc>
+      <image:title>Kayseri Aksagaz proje saha desteği</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogalgaz-altyapi-kazisi-kayseri.jpg</image:loc>
+      <image:title>Kayseri doğalgaz altyapı hazırlığı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogtek-yetkili-firma-araci-kayseri.jpg</image:loc>
+      <image:title>Doğtek Doğalgaz yetkili firma aracı</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-kacak-kontrolu</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-kacak-kontrolu</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/dogalgaz-dis-tesisat-kayseri.jpg</image:loc>
+      <image:title>Kayseri doğalgaz dış tesisat kontrolü</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kombi-montaj-dogalgaz-kayseri.jpg</image:loc>
+      <image:title>Kayseri kombi bağlantısı ve doğalgaz tesisatı</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/petek-temizligi</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/petek-temizligi</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/kaskat-kazan-sistemleri</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/kaskat-kazan-sistemleri</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kaskat-kazan-sistemi-kayseri.jpg</image:loc>
+      <image:title>Kayseri kaskat kazan sistemi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/kat-kaloriferi-kurulumu</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/kat-kaloriferi-kurulumu</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kat-kaloriferi-tesisati-kayseri.jpg</image:loc>
+      <image:title>Kayseri kat kaloriferi tesisatı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/kaskat-kazan-sistemi-kayseri.jpg</image:loc>
+      <image:title>Kayseri kazan hattı bağlantısı</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/yerden-isitma-sistemleri</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/yerden-isitma-sistemleri</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/yerden-isitma-sistemi-kayseri.jpg</image:loc>
+      <image:title>Kayseri yerden ısıtma boru uygulaması</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dogtekdogalgazmuhendislik.com/images/yerden-isitma-kollektor-kayseri.jpg</image:loc>
+      <image:title>Kayseri yerden ısıtma kollektör bağlantısı</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://dogtekdogalgazmuhendislik.com/hizmetler/isi-pompasi-sistemleri</loc>
+    <loc>https://www.dogtekdogalgazmuhendislik.com/hizmetler/isi-pompasi-sistemleri</loc>
+    <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

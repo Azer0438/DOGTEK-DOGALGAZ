@@ -12,7 +12,15 @@ import {
   PhoneCall,
   ShieldCheck,
 } from 'lucide-react';
-import { getRelatedServices, getServiceBySlug, getWhatsappUrl, serviceAreas, siteConfig } from '@/lib/siteData';
+import {
+  getAbsoluteUrl,
+  getRelatedServices,
+  getServiceBySlug,
+  getWhatsappUrl,
+  getWorkImagesForService,
+  serviceAreas,
+  siteConfig,
+} from '@/lib/siteData';
 import { trackLeadClick } from '@/lib/tracking';
 
 const ServiceDetailPage = () => {
@@ -24,6 +32,8 @@ const ServiceDetailPage = () => {
   }
 
   const relatedServices = getRelatedServices(service.slug, 3);
+  const serviceImages = getWorkImagesForService(service.slug, 6);
+  const serviceImageUrls = serviceImages.map((image) => getAbsoluteUrl(image.src));
   const canonical = `${siteConfig.domain}${service.path}`;
   const whatsappText = `Merhaba, ${service.shortTitle} hizmeti hakkında bilgi almak istiyorum.`;
 
@@ -41,18 +51,27 @@ const ServiceDetailPage = () => {
     '@type': 'Service',
     name: service.title,
     description: service.metaDescription,
+    image: serviceImageUrls.length ? serviceImageUrls : undefined,
     provider: {
       '@type': 'HVACBusiness',
       name: siteConfig.name,
+      url: siteConfig.domain,
+      image: getAbsoluteUrl(siteConfig.image),
       telephone: `+${siteConfig.phoneRaw}`,
+      hasMap: siteConfig.mapLink,
+      openingHoursSpecification: siteConfig.openingHoursSpecification,
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Kılıçarslan Mahallesi Molla Sokak No:7/A',
         addressLocality: 'Kayseri',
+        addressRegion: 'Kayseri',
         addressCountry: 'TR',
       },
     },
-    areaServed: 'Kayseri',
+    areaServed: serviceAreas.map((area) => ({
+      '@type': 'AdministrativeArea',
+      name: `${area}, Kayseri`,
+    })),
     url: canonical,
   };
 
@@ -105,6 +124,8 @@ const ServiceDetailPage = () => {
         <meta property="og:title" content={service.seoTitle} />
         <meta property="og:description" content={service.metaDescription} />
         <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={serviceImageUrls[0] || getAbsoluteUrl(siteConfig.image)} />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -188,6 +209,40 @@ const ServiceDetailPage = () => {
             </div>
           </div>
         </section>
+
+        {serviceImages.length > 0 && (
+          <section className="border-y border-slate-200 bg-slate-50 py-16 dark:border-white/10 dark:bg-slate-900 md:py-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl">
+                <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Uygulama Görselleri</span>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+                  {service.shortTitle} için sahadan örnek uygulamalar.
+                </h2>
+                <p className="mt-5 leading-8 text-slate-600 dark:text-slate-300">
+                  Kayseri’de yürüttüğümüz işlerden seçilmiş görüntüler, uygulama kalitesi ve saha düzeni hakkında fikir
+                  verir.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {serviceImages.map((image) => (
+                  <figure
+                    key={image.src}
+                    className="overflow-hidden border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-slate-950"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden bg-slate-900">
+                      <img src={image.src} alt={image.alt} loading="lazy" className="h-full w-full object-cover" />
+                    </div>
+                    <figcaption className="p-5">
+                      <h3 className="font-bold text-slate-950 dark:text-white">{image.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{image.description}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="border-y border-slate-200 bg-slate-50 py-16 dark:border-white/10 dark:bg-slate-900 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">

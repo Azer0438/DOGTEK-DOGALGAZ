@@ -1,12 +1,36 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, MapPin, MessageCircle, PhoneCall } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, MapPin, MessageCircle, PhoneCall } from 'lucide-react';
 import { getWhatsappUrl, serviceAreas, services, siteConfig } from '@/lib/siteData';
 import { trackLeadClick } from '@/lib/tracking';
 
 const LocalSeoPage = () => {
   const canonical = `${siteConfig.domain}/kayseri-dogalgaz-hizmetleri`;
+  const businessProfileCards = [
+    {
+      icon: CheckCircle2,
+      title: 'İşletme adı',
+      details: [siteConfig.name],
+    },
+    {
+      icon: PhoneCall,
+      title: 'Telefon',
+      details: [siteConfig.phoneDisplay],
+      href: `tel:+${siteConfig.phoneRaw}`,
+    },
+    {
+      icon: MapPin,
+      title: 'Adres',
+      details: siteConfig.addressLines,
+      href: siteConfig.mapLink,
+    },
+    {
+      icon: Clock,
+      title: 'Çalışma saatleri',
+      details: siteConfig.openingHoursDisplay,
+    },
+  ];
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -69,6 +93,61 @@ const LocalSeoPage = () => {
                 Hemen Ara
                 <PhoneCall size={19} />
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-200 bg-white py-16 dark:border-white/10 dark:bg-slate-950 md:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+              <div>
+                <span className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">İşletme Bilgileri</span>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+                  Google Haritalar ve web sitemizde aynı bilgiler.
+                </h2>
+                <p className="mt-5 leading-8 text-slate-600 dark:text-slate-300">
+                  Telefon, adres, çalışma saatleri ve hizmet bölgelerini her kanalda aynı tutarak müşterinin doğru
+                  bilgiye hızlı ulaşmasını sağlıyoruz.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {serviceAreas.map((area) => (
+                    <span
+                      key={area}
+                      className="rounded-full border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 dark:border-white/10 dark:text-slate-200"
+                    >
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {businessProfileCards.map((item) => {
+                  const Icon = item.icon;
+                  const Wrapper = item.href ? 'a' : 'div';
+                  const wrapperProps = item.href
+                    ? { href: item.href, target: item.href.startsWith('http') ? '_blank' : undefined, rel: 'noopener noreferrer' }
+                    : {};
+
+                  return (
+                    <Wrapper
+                      key={item.title}
+                      {...wrapperProps}
+                      className="block h-full border border-slate-200 bg-slate-50 p-6 transition hover:border-blue-200 hover:bg-white dark:border-white/10 dark:bg-slate-900 dark:hover:border-blue-400/40 dark:hover:bg-slate-900"
+                    >
+                      <Icon size={23} className="mb-5 text-orange-500" />
+                      <h3 className="text-lg font-bold text-slate-950 dark:text-white">{item.title}</h3>
+                      <div className="mt-3 space-y-1">
+                        {item.details.map((detail) => (
+                          <p key={detail} className="break-words text-sm font-medium leading-6 text-slate-600 dark:text-slate-300">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
+                    </Wrapper>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

@@ -41,7 +41,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Çalışma Saatleri',
-      details: ['Pzt - Cmt: 09:00 - 18:00', 'Pazar: Kapalı'],
+      details: siteConfig.openingHoursDisplay,
     },
   ];
 

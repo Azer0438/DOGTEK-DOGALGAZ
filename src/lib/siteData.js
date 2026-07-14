@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Doğtek Doğalgaz Mühendislik',
   shortName: 'Doğtek Doğalgaz',
-  domain: 'https://dogtekdogalgazmuhendislik.com',
+  domain: 'https://www.dogtekdogalgazmuhendislik.com',
   tagline: 'Aksa Gaz Yetkili Firma',
   location: 'Kayseri',
   phoneRaw: '905366449642',
@@ -14,7 +14,23 @@ export const siteConfig = {
   logoUrl: 'https://horizons-cdn.hostinger.com/b5020123-4ca5-4633-851d-2a1e8525cabf/gemini_generated_image_tnou9gtnou9gtnou-MDXUc.png',
   heroImageUrl: 'https://horizons-cdn.hostinger.com/b5020123-4ca5-4633-851d-2a1e8525cabf/gemini_generated_image_ty8fgjty8fgjty8f-dRArK.png',
   aksaLogoUrl: 'https://horizons-cdn.hostinger.com/b5020123-4ca5-4633-851d-2a1e8525cabf/aksa_dogalgaz-4Gra1.jpg',
-  teamImageUrl: 'https://horizons-cdn.hostinger.com/b5020123-4ca5-4633-851d-2a1e8525cabf/ekran-gapra1-4nta1-4sa1-4-2026-01-19-010534-89xPn.png',
+  teamImageUrl: '/images/dogtek-dogalgaz-servis-araci-kayseri.jpg',
+  image: '/images/dogtek-dogalgaz-servis-araci-kayseri.jpg',
+  openingHours: ['Mo-Sa 09:00-18:00'],
+  openingHoursDisplay: ['Pzt - Cmt: 09:00 - 18:00', 'Pazar: Kapalı'],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+};
+
+export const getAbsoluteUrl = (path) => {
+  if (!path) return siteConfig.domain;
+  return path.startsWith('http') ? path : `${siteConfig.domain}${path}`;
 };
 
 export const getWhatsappUrl = (message = siteConfig.whatsappMessage) =>
@@ -364,6 +380,96 @@ export const getServiceBySlug = (slug) => services.find((service) => service.slu
 
 export const getRelatedServices = (currentSlug, limit = 3) =>
   services.filter((service) => service.slug !== currentSlug).slice(0, limit);
+
+export const workImages = [
+  {
+    src: '/images/dogtek-dogalgaz-servis-araci-kayseri.jpg',
+    alt: 'Kayseri Doğtek Doğalgaz servis aracı',
+    title: 'Kayseri saha ekibi',
+    description: 'Kayseri genelinde keşif, proje ve uygulama için sahada hizmet veriyoruz.',
+    serviceSlugs: ['dogalgaz-tesisati', 'aksagaz-proje-cizimi'],
+  },
+  {
+    src: '/images/kaskat-kazan-sistemi-kayseri.jpg',
+    alt: 'Kayseri kaskat kazan sistemi uygulaması',
+    title: 'Kaskat kazan sistemi',
+    description: 'Merkezi ısıtma ihtiyacı olan yapılarda kazan hattı ve teknik bağlantı uygulamaları.',
+    serviceSlugs: ['kaskat-kazan-sistemleri', 'kat-kaloriferi-kurulumu'],
+  },
+  {
+    src: '/images/kat-kaloriferi-tesisati-kayseri.jpg',
+    alt: 'Kayseri kat kaloriferi tesisatı ve kazan bağlantısı',
+    title: 'Kat kaloriferi tesisatı',
+    description: 'Konut ve ticari alanlarda düzenli, güvenli ve kontrol edilebilir ısıtma tesisatı.',
+    serviceSlugs: ['kat-kaloriferi-kurulumu', 'dogalgaz-tesisati'],
+  },
+  {
+    src: '/images/yerden-isitma-sistemi-kayseri.jpg',
+    alt: 'Kayseri yerden ısıtma sistemi boru uygulaması',
+    title: 'Yerden ısıtma uygulaması',
+    description: 'Yeni yapı ve tadilat projeleri için zeminden homojen ısı dağılımı sağlayan uygulamalar.',
+    serviceSlugs: ['yerden-isitma-sistemleri'],
+  },
+  {
+    src: '/images/yerden-isitma-kollektor-kayseri.jpg',
+    alt: 'Kayseri yerden ısıtma kollektör bağlantısı',
+    title: 'Kollektör bağlantısı',
+    description: 'Yerden ısıtma hatlarında düzenli kolektör ve zon bağlantısı.',
+    serviceSlugs: ['yerden-isitma-sistemleri'],
+  },
+  {
+    src: '/images/dogalgaz-dis-tesisat-kayseri.jpg',
+    alt: 'Kayseri dış cephe doğalgaz tesisatı',
+    title: 'Dış tesisat uygulaması',
+    description: 'Bina dışı hat, kutu ve bağlantı çözümlerinde güvenli uygulama.',
+    serviceSlugs: ['dogalgaz-tesisati', 'dogalgaz-kacak-kontrolu'],
+  },
+  {
+    src: '/images/dogalgaz-altyapi-kazisi-kayseri.jpg',
+    alt: 'Kayseri doğalgaz altyapı kazısı ve hat hazırlığı',
+    title: 'Altyapı hazırlığı',
+    description: 'Hat geçişi, zemin hazırlığı ve dış tesisat uygulama süreçleri.',
+    serviceSlugs: ['dogalgaz-tesisati', 'aksagaz-proje-cizimi'],
+  },
+  {
+    src: '/images/kombi-montaj-dogalgaz-kayseri.jpg',
+    alt: 'Kayseri kombi bağlantısı ve doğalgaz tesisatı',
+    title: 'Kombi bağlantısı',
+    description: 'Kombi, gaz hattı ve su bağlantılarında düzenli tesisat uygulaması.',
+    serviceSlugs: ['dogalgaz-tesisati', 'dogalgaz-kacak-kontrolu'],
+  },
+  {
+    src: '/images/dogtek-yetkili-firma-araci-kayseri.jpg',
+    alt: 'Doğtek Doğalgaz Aksa Gaz yetkili firma aracı Kayseri',
+    title: 'Yetkili firma görünürlüğü',
+    description: 'Kayseri’de yerel işletme ve yetkili hizmet yaklaşımı.',
+    serviceSlugs: ['aksagaz-proje-cizimi'],
+  },
+  {
+    src: '/images/dogtek-saha-ekibi-kayseri.jpg',
+    alt: 'Doğtek Doğalgaz Kayseri saha ekibi ve servis aracı',
+    title: 'Saha keşif desteği',
+    description: 'Keşif ve uygulama öncesinde yapının ihtiyacına göre yerinde değerlendirme.',
+    serviceSlugs: ['dogalgaz-tesisati', 'aksagaz-proje-cizimi'],
+  },
+  {
+    src: '/images/dogtek-is-yeri-referans-kayseri.jpg',
+    alt: 'Kayseri iş yeri doğalgaz ve ısıtma hizmeti',
+    title: 'İş yeri uygulamaları',
+    description: 'Ticari alanlarda doğalgaz ve ısıtma ihtiyaçlarına yönelik saha çalışmaları.',
+    serviceSlugs: ['dogalgaz-tesisati', 'kaskat-kazan-sistemleri', 'kat-kaloriferi-kurulumu'],
+  },
+  {
+    src: '/images/dogtek-dogalgaz-proje-sahasi-kayseri.jpg',
+    alt: 'Kayseri doğalgaz proje ve uygulama sahası',
+    title: 'Proje sahası',
+    description: 'Başvuru, proje ve uygulama sürecinde sahadaki teknik hazırlıkların takibi.',
+    serviceSlugs: ['aksagaz-proje-cizimi', 'dogalgaz-tesisati'],
+  },
+];
+
+export const getWorkImagesForService = (slug, limit = 3) =>
+  workImages.filter((image) => image.serviceSlugs.includes(slug)).slice(0, limit);
 
 export const partners = [
   {

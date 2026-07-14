@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dogtekdogalgazmuhendislik.com/sitemap.xml
+Sitemap: https://www.dogtekdogalgazmuhendislik.com/sitemap.xml
