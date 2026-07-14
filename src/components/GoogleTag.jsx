@@ -1,11 +1,16 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const defaultGaMeasurementId = 'G-FW0E6Q908M';
 
 const tagIds = [
-  import.meta.env.VITE_GA_MEASUREMENT_ID,
+  import.meta.env.VITE_GA_MEASUREMENT_ID || defaultGaMeasurementId,
   import.meta.env.VITE_GOOGLE_ADS_ID,
 ].filter(Boolean);
 
 const GoogleTag = () => {
+  const location = useLocation();
+
   useEffect(() => {
     if (!tagIds.length || typeof window === 'undefined') return;
 
@@ -25,9 +30,25 @@ const GoogleTag = () => {
 
     window.gtag('js', new Date());
     tagIds.forEach((id) => {
-      window.gtag('config', id);
+      window.gtag('config', id, {
+        send_page_view: false,
+      });
     });
   }, []);
+
+  useEffect(() => {
+    if (!tagIds.length || typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+
+    const pagePath = `${location.pathname}${location.search}${location.hash}`;
+    tagIds.forEach((id) => {
+      window.gtag('event', 'page_view', {
+        send_to: id,
+        page_path: pagePath,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    });
+  }, [location.pathname, location.search, location.hash]);
 
   return null;
 };
